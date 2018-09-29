@@ -1,0 +1,11 @@
+[package]
+name = "ambitious-game"
+version = "0.1.0"
+authors = []
+
+[dependencies]
+amethyst = { git = "https://github.com/amethyst/amethyst" }
+rand = "0.5"
+
+[profile.release]
+debug = true
