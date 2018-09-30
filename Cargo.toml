@@ -6,6 +6,3 @@ authors = []
 [dependencies]
 amethyst = { git = "https://github.com/amethyst/amethyst" }
 rand = "0.5"
-
-[profile.release]
-debug = true
