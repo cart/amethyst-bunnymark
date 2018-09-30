@@ -8,8 +8,8 @@ pub struct BunnyMarkBundle;
 
 impl<'a, 'b> SystemBundle<'a, 'b> for BunnyMarkBundle {
     fn build(self, builder: &mut DispatcherBuilder<'a, 'b>) -> Result<()> {
-        builder.add_thread_local(MoveBunniesSystem::new());
-        builder.add_thread_local(SpawnBunniesSystem::new());
+        builder.add(MoveBunniesSystem::new(), "move_bunnies", &[]);
+        builder.add(SpawnBunniesSystem::new(), "spawn_bunnies", &[]);
         Ok(())
     }
 }
