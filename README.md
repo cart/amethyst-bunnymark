@@ -11,4 +11,4 @@ Uses the [Amethyst Game Engine](https://www.amethyst.rs/) to render an increasin
 
 ## Updates
 
-Follow me on twitter @cart_cart if you want Bunnymark updates or updates on my other projects!
+Follow me on twitter ([@cart_cart](https://twitter.com/cart_cart)) if you want Bunnymark updates or updates on my other projects!
