@@ -3,6 +3,7 @@ use amethyst::{
     core::cgmath::Vector2,
     ecs::World,
     renderer::{MaterialTextureSet, PngFormat, Sprite, SpriteSheet, Texture, TextureCoordinates},
+    renderer::TextureMetadata
 };
 
 pub struct BunnyResource {
@@ -31,7 +32,7 @@ impl BunnyResource {
             loader.load(
                 "icon.png",
                 PngFormat,
-                Default::default(),
+                TextureMetadata::srgb(),
                 (),
                 &texture_storage,
             )

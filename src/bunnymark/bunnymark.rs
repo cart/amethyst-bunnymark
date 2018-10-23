@@ -14,7 +14,7 @@ pub struct BunnyMark {
     pub camera: Option<Entity>,
 }
 
-impl<'a, 'b> State<GameData<'a, 'b>, ()> for BunnyMark {
+impl<'a, 'b> State<GameData<'a, 'b>, StateEvent> for BunnyMark {
     fn on_start(&mut self, data: StateData<GameData>) {
         BunnyResource::initialize(data.world);
 
@@ -33,7 +33,7 @@ impl<'a, 'b> State<GameData<'a, 'b>, ()> for BunnyMark {
         );
     }
 
-    fn update(&mut self, data: StateData<GameData>) -> Trans<GameData<'a, 'b>, ()> {
+    fn update(&mut self, data: StateData<GameData>) -> Trans<GameData<'a, 'b>, StateEvent> {
         data.data.update(&data.world);
         Trans::None
     }
@@ -41,8 +41,8 @@ impl<'a, 'b> State<GameData<'a, 'b>, ()> for BunnyMark {
     fn handle_event(
         &mut self,
         data: StateData<GameData>,
-        event: StateEvent<()>,
-    ) -> Trans<GameData<'a, 'b>, ()> {
+        event: StateEvent,
+    ) -> Trans<GameData<'a, 'b>, StateEvent> {
         match event {
             StateEvent::Window(event) => match event {
                 Event::WindowEvent {
